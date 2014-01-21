@@ -1,0 +1,20 @@
+<h1>Rails Movie App</h1>
+
+<!-- Spencer: introduce URL helpers: link_to and button_to, route paths like 'new_movie_path'
+<%  @movies.each do |movie|  %>
+
+  <!-- Link without url helper: <a href="/movies/<%=movie["imdbID"]%>" > -->
+  <%= link_to movie["Title"], movie_path(movie["imdbID"]) %> -- <%= movie["Year"] %>
+    <%= movie["Title"] %>
+  </a>
+  -- <%= movie["Year"] %>
+
+  <%= button_to "delete", {controller: :movies, action: :destroy, id: movie["imdbID"] }, :method => :delete %>
+  <%= button_to "edit", {controller: :movies, action: :edit, id: movie["imdbID"] }, :method => :get %>
+
+  <br>
+<% end %>
+
+<p>
+<%= link_to 'Add Movie to DB', new_movie_path %>
+

@@ -1,0 +1,9 @@
+<h2>Edit movie</h2>
+
+<!-- Spencer: replace form with form_for -->
+<form action="/movies/tt0133093" method="post" >
+  <input name="_method" type="hidden" value="patch" />
+  Title: <input name='title' type="text" value="<%= @movie['Title'] %>" /><br>
+  Year: <input name='year' type="text" value="<%= @movie['Year'] %>" />
+  <input name="commit" type="submit" value="Save changes" />
+</form>
